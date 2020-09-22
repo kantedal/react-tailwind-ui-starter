@@ -14,7 +14,6 @@ interface Props {
 }
 
 const DropDown: FC<Props> = ({ open, items, onClose }) => {
-  console.log(open)
   const handleClose = () => (open ? onClose() : null)
   const clickAwayRef = useClickAway(handleClose)
 

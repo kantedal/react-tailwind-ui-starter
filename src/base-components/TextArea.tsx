@@ -1,18 +1,18 @@
 import React, { FC, InputHTMLAttributes } from 'react'
 
-export interface InputProps extends InputHTMLAttributes<HTMLInputElement> {
+export interface TextAreaProps extends InputHTMLAttributes<HTMLTextAreaElement> {
   label?: string
   helpText?: string
   error?: string
   classes?: { root?: string; input?: string }
 }
 
-const Input: FC<InputProps> = ({ label, helpText, error, classes, ...rest }) => {
+const TextArea: FC<TextAreaProps> = ({ label, helpText, error, classes, ...rest }) => {
   return (
     <div className={classes?.root}>
       {label && <label className='block text-sm font-medium leading-5 text-gray-700'>{label}</label>}
       <div className='mt-1 relative rounded-md shadow-sm'>
-        <input
+        <textarea
           className={`form-input block w-full sm:text-sm sm:leading-5 ${classes?.input} ${
             Boolean(error) && 'pr-10 border-red-300 text-red-900  placeholder-red-300 focus:border-red-300 focus:shadow-outline-red'
           }`}
@@ -44,4 +44,4 @@ const Input: FC<InputProps> = ({ label, helpText, error, classes, ...rest }) => 
   )
 }
 
-export default Input
+export default TextArea
