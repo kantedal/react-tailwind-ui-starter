@@ -4,7 +4,7 @@ interface Props {
   variant: 'success' | 'warning' | 'error'
 }
 
-const Alert: FC<Props> = ({ variant }) => {
+const Alert: FC<Props> = ({ variant, children }) => {
   const baseClass = useMemo(() => {
     if (variant === 'success') {
       return 'bg-green-50'
@@ -67,15 +67,15 @@ const Alert: FC<Props> = ({ variant }) => {
         <div className='flex-shrink-0'>
           <svg className={`h-5 w-5 ${iconClass}`} viewBox='0 0 20 20' fill='currentColor'>
             <path
-              fill-rule='evenodd'
+              fillRule='evenodd'
               d='M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z'
-              clip-rule='evenodd'
+              clipRule='evenodd'
             />
           </svg>
         </div>
         <div className='ml-3'>
           <div className={`text-sm leading-5 ${infoMessageClass}`}>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquid pariatur.</p>
+            <p>{children}</p>
           </div>
           {/* <div className='mt-4'>
             <div className='-mx-2 -my-1.5 flex'>
@@ -96,9 +96,9 @@ const Alert: FC<Props> = ({ variant }) => {
             >
               <svg className='h-5 w-5' viewBox='0 0 20 20' fill='currentColor'>
                 <path
-                  fill-rule='evenodd'
+                  fillRule='evenodd'
                   d='M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z'
-                  clip-rule='evenodd'
+                  clipRule='evenodd'
                 />
               </svg>
             </button>
