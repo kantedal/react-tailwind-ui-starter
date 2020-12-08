@@ -5,7 +5,7 @@ import 'styles/main.css'
 import Input, { InputProps } from '../base-components/Input'
 
 export default {
-  title: 'Example/Input',
+  title: 'Input',
   component: Input,
 } as Meta
 

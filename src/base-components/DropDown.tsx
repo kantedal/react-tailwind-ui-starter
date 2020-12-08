@@ -7,13 +7,13 @@ export interface DropDownItem {
   onClick: () => void
 }
 
-interface Props {
+export interface DropDownProps {
   open: boolean
   items: DropDownItem[]
   onClose: () => void
 }
 
-const DropDown: FC<Props> = ({ open, items, onClose }) => {
+const DropDown: FC<DropDownProps> = ({ open, items, onClose }) => {
   const handleClose = () => (open ? onClose() : null)
   const clickAwayRef = useClickAway(handleClose)
 

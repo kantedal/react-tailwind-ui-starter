@@ -7,7 +7,7 @@ export interface SelectMenuItem {
   title: string
 }
 
-interface Props {
+interface SelectMenuProps {
   selectedItem: SelectMenuItem | null
   items: SelectMenuItem[]
   placeholder?: string
@@ -16,7 +16,7 @@ interface Props {
   onChange: (item: SelectMenuItem | null) => void
 }
 
-const SelectMenu: FC<Props> = ({ selectedItem, onChange, items, placeholder, label, classes }) => {
+const SelectMenu: FC<SelectMenuProps> = ({ selectedItem, onChange, items, placeholder, label, classes }) => {
   const [open, setOpen] = useState(false)
   const handleOpen = () => setOpen(true)
   const handleClose = () => (open ? setOpen(false) : null)

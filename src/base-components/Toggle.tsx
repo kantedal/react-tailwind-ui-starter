@@ -1,11 +1,11 @@
 import React, { FC } from 'react'
 
-interface Props {
+interface ToggleProps {
   toggled: boolean
   onChange: (toggled: boolean) => void
 }
 
-const Toggle: FC<Props> = ({ toggled, onChange }) => {
+const Toggle: FC<ToggleProps> = ({ toggled, onChange }) => {
   const handleToggle = () => onChange(!toggled)
   return (
     <span

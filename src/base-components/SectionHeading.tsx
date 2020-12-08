@@ -1,11 +1,11 @@
 import React, { FC } from 'react'
 
-interface Props {
+interface SectionHeadingProps {
   title?: string
   description?: string
 }
 
-const SectionHeading: FC<Props> = ({ title, description }) => {
+const SectionHeading: FC<SectionHeadingProps> = ({ title, description }) => {
   return (
     <div className='pb-5 border-b border-gray-200 space-y-2'>
       {title && <h3 className='text-lg leading-6 font-medium text-gray-900'>{title}</h3>}

@@ -3,9 +3,9 @@ import { Link, useLocation } from 'react-router-dom'
 import useOpenState from '../hooks/useOpenState'
 import DropDown, { DropDownItem } from './DropDown'
 
-interface Props {}
+interface TopMenuProps {}
 
-const TopMenu: FC<Props> = ({ children }) => {
+const TopMenu: FC<TopMenuProps> = ({ children }) => {
   const [userDropDownOpen, openUserDropDown, closeUserDropDown] = useOpenState()
 
   const userDropDownItems = useMemo<DropDownItem[]>(

@@ -1,8 +1,21 @@
 import React, { FC } from 'react'
 
-interface Props {}
+export interface TableRow {
+  content?: string
+  bold?: boolean
+}
 
-const Table: FC<Props> = ({ children }) => {
+interface columnLabel {
+  id?: string
+  label?: string
+}
+
+export interface TableProps {
+  columnLabels: columnLabel[]
+  tableRows: TableRow[][]
+}
+
+const Table: FC<TableProps> = ({ columnLabels, tableRows }) => {
   return (
     <div className='flex flex-col'>
       <div className='-my-2 overflow-x-auto sm:-mx-6 lg:-mx-8'>
@@ -11,33 +24,33 @@ const Table: FC<Props> = ({ children }) => {
             <table className='min-w-full divide-y divide-gray-200'>
               <thead>
                 <tr>
-                  <th className='px-6 py-3 bg-gray-50 text-left text-xs leading-4 font-medium text-gray-500 uppercase tracking-wider'>
-                    Name
-                  </th>
-                  <th className='px-6 py-3 bg-gray-50 text-left text-xs leading-4 font-medium text-gray-500 uppercase tracking-wider'>
-                    Title
-                  </th>
-                  <th className='px-6 py-3 bg-gray-50 text-left text-xs leading-4 font-medium text-gray-500 uppercase tracking-wider'>
-                    Email
-                  </th>
-                  <th className='px-6 py-3 bg-gray-50 text-left text-xs leading-4 font-medium text-gray-500 uppercase tracking-wider'>
-                    Role
-                  </th>
+                  {columnLabels.map((item) => (
+                    <th className='px-6 py-3 bg-gray-50 text-left text-xs leading-4 font-medium text-gray-500 uppercase tracking-wider'>
+                      {item.label}
+                    </th>
+                  ))}
                   <th className='px-6 py-3 bg-gray-50'></th>
                 </tr>
               </thead>
               <tbody className='bg-white divide-y divide-gray-200'>
-                <tr>
-                  <td className='px-6 py-4 whitespace-no-wrap text-sm leading-5 font-medium text-gray-900'>Jane Cooper</td>
-                  <td className='px-6 py-4 whitespace-no-wrap text-sm leading-5 text-gray-500'>Regional Paradigm Technician</td>
-                  <td className='px-6 py-4 whitespace-no-wrap text-sm leading-5 text-gray-500'>jane.cooper@example.com</td>
-                  <td className='px-6 py-4 whitespace-no-wrap text-sm leading-5 text-gray-500'>Admin</td>
-                  <td className='px-6 py-4 whitespace-no-wrap text-right text-sm leading-5 font-medium'>
-                    <a href='#' className='text-indigo-600 hover:text-indigo-900'>
-                      Edit
-                    </a>
-                  </td>
-                </tr>
+                {tableRows.map((row) => (
+                  <tr>
+                    {row.map((item) => (
+                      <td
+                        className={`px-6 py-4 whitespace-no-wrap text-sm leading-5 ${
+                          item.bold ? 'font-medium text-gray-900' : ' text-gray-500'
+                        }`}
+                      >
+                        {item.content}
+                      </td>
+                    ))}
+                    <td className='px-6 py-4 whitespace-no-wrap text-right text-sm leading-5 font-medium'>
+                      <a href='#' className='text-indigo-600 hover:text-indigo-900'>
+                        Edit
+                      </a>
+                    </td>
+                  </tr>
+                ))}
               </tbody>
             </table>
           </div>
