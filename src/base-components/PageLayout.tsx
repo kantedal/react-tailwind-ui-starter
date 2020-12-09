@@ -1,10 +1,10 @@
 import React, { FC } from 'react'
 
-interface Props {
+interface PageLayoutProps {
   title?: string
 }
 
-const PageLayout: FC<Props> = ({ title, children }) => {
+const PageLayout: FC<PageLayoutProps> = ({ title, children }) => {
   return (
     <div className='py-10'>
       {title && (

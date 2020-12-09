@@ -1,11 +1,11 @@
 import React, { FC } from 'react'
 
-interface Props {
+interface FormItemProps {
   title?: string
   description?: string
 }
 
-const FormItem: FC<Props> = ({ children, title, description }) => {
+const FormItem: FC<FormItemProps> = ({ children, title, description }) => {
   return (
     <div className='sm:grid mt-5 sm:grid-cols-3 sm:gap-4 sm:items-start sm:border-t sm:border-gray-200 sm:pt-5'>
       <div className='pr-8'>

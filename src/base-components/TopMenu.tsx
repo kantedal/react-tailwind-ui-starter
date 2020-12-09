@@ -3,9 +3,9 @@ import { Link, useLocation } from 'react-router-dom'
 import useOpenState from '../hooks/useOpenState'
 import DropDown, { DropDownItem } from './DropDown'
 
-interface Props {}
+export interface TopMenuProps {}
 
-const TopMenu: FC<Props> = ({ children }) => {
+const TopMenu: FC<TopMenuProps> = ({ children }) => {
   const [userDropDownOpen, openUserDropDown, closeUserDropDown] = useOpenState()
 
   const userDropDownItems = useMemo<DropDownItem[]>(
@@ -40,12 +40,12 @@ const TopMenu: FC<Props> = ({ children }) => {
             <div className='flex-shrink-0 flex items-center'>
               <img
                 className='block lg:hidden h-8 w-auto'
-                src='https://tailwindui.com/img/logos/workflow-mark-on-white.svg'
+                src='https://www.pikpng.com/pngl/b/103-1038399_vector-royalty-free-download-earth-svg-stencil-we.png'
                 alt='Workflow logo'
               />
               <img
                 className='hidden lg:block h-8 w-auto'
-                src='https://tailwindui.com/img/logos/workflow-logo-on-white.svg'
+                src='https://www.pikpng.com/pngl/b/103-1038399_vector-royalty-free-download-earth-svg-stencil-we.png'
                 alt='Workflow logo'
               />
             </div>

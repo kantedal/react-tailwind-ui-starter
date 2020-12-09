@@ -1,10 +1,10 @@
 import React, { FC, useMemo } from 'react'
 
-interface Props {
+export interface AlertProps {
   variant: 'success' | 'warning' | 'error'
 }
 
-const Alert: FC<Props> = ({ variant, children }) => {
+const Alert: FC<AlertProps> = ({ variant, children }) => {
   const baseClass = useMemo(() => {
     if (variant === 'success') {
       return 'bg-green-50'

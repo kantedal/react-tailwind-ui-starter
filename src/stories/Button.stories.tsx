@@ -5,7 +5,7 @@ import 'styles/main.css'
 import Button, { ButtonProps } from '../base-components/Button'
 
 export default {
-  title: 'Example/Button',
+  title: 'Clickables',
   component: Button,
 } as Meta
 

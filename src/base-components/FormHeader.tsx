@@ -1,12 +1,12 @@
 import React, { FC } from 'react'
 
-interface Props {
+interface FormHeaderProps {
   title?: string
   description?: string
   className?: string
 }
 
-const FormHeader: FC<Props> = ({ title, description, className }) => {
+const FormHeader: FC<FormHeaderProps> = ({ title, description, className }) => {
   return (
     <div className={className}>
       {title && <h3 className='text-lg leading-6 font-medium text-gray-900'>{title}</h3>}
